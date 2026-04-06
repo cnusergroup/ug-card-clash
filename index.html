@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>亚马逊云科技 Card Clash 对战锦标赛</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Animated background particles -->
+  <canvas id="particles"></canvas>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">CARD CLASH</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">关于</a>
+        <a href="#rules">赛制</a>
+        <a href="#schedule">日程</a>
+        <a href="#tool" class="admin-only">赛程工具</a>
+        <a href="records.html">成绩记录</a>
+        <a href="live.html">实时对战</a>
+      </div>
+      <button class="nav-hamburger" id="navHamburger" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge">亚马逊云科技 UserGroup 活动</div>
+      <h1 class="hero-title">
+        <span class="title-line">AWS</span>
+        <span class="title-line accent">CARD CLASH</span>
+        <span class="title-line small">对战锦标赛</span>
+      </h1>
+      <p class="hero-desc">
+        用亚马逊云科技服务卡牌构建云架构，在瑞士轮赛制中与对手一决高下。<br>
+        学习云计算，从未如此热血沸腾。
+      </p>
+      <div class="hero-actions">
+        <a href="https://skillbuilder.aws/learn/7V665TRGMY/aws-card-clash--an-architecture-design-game/7RJQ9341Z8" target="_blank" rel="noopener" class="btn btn-primary">🎮 开始游戏</a>
+        <a href="#tool" class="btn btn-ghost admin-only">赛程规划工具</a>
+        <a href="#about" class="btn btn-ghost">了解更多</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">3D</span>
+          <span class="stat-label">回合制卡牌</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">瑞士轮</span>
+          <span class="stat-label">公平赛制</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">FREE</span>
+          <span class="stat-label">免费参与</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="card-stack">
+        <div class="floating-card card-1">
+          <div class="card-face">
+            <div class="card-icon"><img src="icons/s3.svg" alt="Amazon S3" width="48" height="48"></div>
+            <div class="card-name">Amazon S3</div>
+            <div class="card-type">存储服务</div>
+          </div>
+        </div>
+        <div class="floating-card card-2">
+          <div class="card-face">
+            <div class="card-icon"><img src="icons/lambda.svg" alt="AWS Lambda" width="48" height="48"></div>
+            <div class="card-name">AWS Lambda</div>
+            <div class="card-type">计算服务</div>
+          </div>
+        </div>
+        <div class="floating-card card-3">
+          <div class="card-face">
+            <div class="card-icon"><img src="icons/dynamodb.svg" alt="Amazon DynamoDB" width="48" height="48"></div>
+            <div class="card-name">Amazon DynamoDB</div>
+            <div class="card-type">数据库</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// ABOUT</span>
+        <h2 class="section-title">什么是 Card Clash?</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-icon">🎮</div>
+          <h3>3D 回合制卡牌游戏</h3>
+          <p>亚马逊云科技 Card Clash 是一款由亚马逊云科技推出的免费 3D 回合制卡牌游戏。玩家通过选择正确的亚马逊云科技服务卡牌来完成云架构设计挑战，在游戏中学习真实的亚马逊云科技解决方案。</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">🏗️</div>
+          <h3>架构设计挑战</h3>
+          <p>每局游戏中，棋盘上会展示一个不完整的云架构。玩家需要从手牌中选择正确的亚马逊云科技服务卡牌，填入架构的空缺位置。正确放置得分，累计最高分者获胜。</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">📚</div>
+          <h3>边玩边学</h3>
+          <p>告别枯燥的文档阅读。通过策略性的卡牌对战，自然而然地掌握亚马逊云科技服务的功能、用途和最佳实践，是备考亚马逊云科技认证的绝佳辅助工具。</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">⚔️</div>
+          <h3>对战锦标赛</h3>
+          <p>本次活动将 Card Clash 从线上搬到线下，采用瑞士轮赛制进行多轮对战。选手们将在公平的赛制下一较高下，争夺最终的 Card Clash 冠军。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rules Section -->
+  <section class="section section-dark" id="rules">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// RULES</span>
+        <h2 class="section-title">瑞士轮赛制规则</h2>
+      </div>
+      <div class="rules-intro">
+        <p>瑞士轮（Swiss System）起源于 1895 年瑞士苏黎世的国际象棋锦标赛，是一种兼顾公平性与效率的比赛赛制。所有选手全程参赛，不会被淘汰。</p>
+      </div>
+      <div class="rules-grid">
+        <div class="rule-card">
+          <div class="rule-num">01</div>
+          <h3>配对原则</h3>
+          <p>每轮比赛中，积分相同或相近的选手将被配对对战。首轮随机配对，后续轮次根据当前积分排名进行匹配。</p>
+        </div>
+        <div class="rule-card">
+          <div class="rule-num">02</div>
+          <h3>不重复对战</h3>
+          <p>整个锦标赛期间，任意两名选手之间最多只会交手一次，确保每轮都能遇到新的对手。</p>
+        </div>
+        <div class="rule-card">
+          <div class="rule-num">03</div>
+          <h3>积分规则</h3>
+          <p>胜利得 3 分，平局得 1 分，失败得 0 分。最终按总积分排名，积分相同时按对手平均积分（布赫兹分）决定名次。</p>
+        </div>
+        <div class="rule-card">
+          <div class="rule-num">04</div>
+          <h3>轮次计算</h3>
+          <p>瑞士轮的轮次通常为 log₂(N) 向上取整，其中 N 为参赛人数。例如 16 人需要 4 轮，32 人需要 5 轮即可决出冠军。</p>
+        </div>
+        <div class="rule-card">
+          <div class="rule-num">05</div>
+          <h3>轮空处理</h3>
+          <p>当参赛人数为奇数时，每轮将有一名选手轮空。轮空选手自动获得胜场积分，且整个赛事中每人最多轮空一次。</p>
+        </div>
+        <div class="rule-card">
+          <div class="rule-num">06</div>
+          <h3>全员参赛</h3>
+          <p>与淘汰赛不同，瑞士轮中所有选手都会参加每一轮比赛，保证每位参赛者都能获得充分的比赛体验。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schedule Section -->
+  <section class="section" id="schedule">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// SCHEDULE</span>
+        <h2 class="section-title">活动日程</h2>
+      </div>
+      <div class="timeline" id="eventTimeline">
+        <!-- 由 events.js 动态渲染 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Swiss Round Tool Section -->
+  <section class="section section-dark admin-only" id="tool">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// TOOL</span>
+        <h2 class="section-title">瑞士轮赛程规划工具</h2>
+        <p class="section-desc">输入参赛选手信息，自动生成瑞士轮配对方案。支持多轮比赛管理和实时积分排名。</p>
+      </div>
+
+      <div class="tool-container">
+        <!-- Player Registration Panel -->
+        <div class="tool-panel">
+          <div class="panel-header">
+            <h3>选手管理</h3>
+          </div>
+          <div class="panel-body">
+            <div class="input-group admin-only">
+              <label for="playerName">选手姓名</label>
+              <div class="input-row">
+                <input type="text" id="playerName" placeholder="输入选手姓名" autocomplete="off">
+                <button class="btn btn-primary btn-sm" id="addPlayerBtn">添加</button>
+              </div>
+            </div>
+            <div class="input-group admin-only">
+              <label>批量导入（每行一个姓名）</label>
+              <textarea id="bulkPlayers" rows="4" placeholder="张三&#10;李四&#10;王五&#10;..."></textarea>
+              <button class="btn btn-ghost btn-sm" id="bulkImportBtn" style="margin-top:8px;">批量导入</button>
+            </div>
+            <div class="player-list-header">
+              <span>已报名选手 (<span id="playerCount">0</span>人)</span>
+              <button class="btn-text" id="clearAllBtn">清空</button>
+            </div>
+            <ul class="player-list" id="playerList"></ul>
+
+            <!-- 签到管理面板 -->
+            <div class="checkin-panel" id="checkinPanel" style="display:none;">
+              <div class="checkin-panel-header">
+                <h4>📋 签到管理</h4>
+              </div>
+              <div class="checkin-controls admin-only">
+                <div class="input-group">
+                  <label for="checkinEventName">活动名称</label>
+                  <input type="text" id="checkinEventName" placeholder="输入活动名称" autocomplete="off">
+                </div>
+                <div class="checkin-btn-group">
+                  <button class="btn btn-primary btn-sm" id="startCheckinBtn">开启签到</button>
+                  <button class="btn btn-danger btn-sm" id="stopCheckinBtn" style="display:none;">关闭签到</button>
+                </div>
+              </div>
+              <div class="checkin-link-area" id="checkinLinkArea" style="display:none;">
+                <label>签到链接</label>
+                <div class="input-row">
+                  <input type="text" id="checkinLink" readonly>
+                  <button class="btn btn-ghost btn-sm" id="copyCheckinLinkBtn">复制链接</button>
+                </div>
+              </div>
+              <div class="checkin-list-header">
+                <span>已签到选手 (<span id="adminCheckinCount">0</span>人)</span>
+              </div>
+              <ul class="checkin-list" id="adminCheckinList"></ul>
+              <div class="checkin-import admin-only">
+                <button class="btn btn-primary btn-sm" id="importCheckinBtn">导入到赛程</button>
+                <span class="checkin-import-msg" id="checkinImportMsg"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tournament Control Panel -->
+        <div class="tool-panel tool-panel-wide">
+          <div class="panel-header">
+            <h3>赛程控制</h3>
+            <div class="round-info">
+              当前轮次: <span id="currentRound">未开始</span> / 
+              总轮次: <span id="totalRounds">-</span>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="tool-actions">
+              <button class="btn btn-primary admin-only" id="startTournamentBtn">开始锦标赛</button>
+              <button class="btn btn-ghost admin-only" id="nextRoundBtn" disabled>下一轮配对</button>
+              <button class="btn btn-save admin-only" id="saveRecordBtn" disabled>💾 保存成绩</button>
+              <button class="btn btn-danger admin-only" id="resetTournamentBtn">重置赛事</button>
+            </div>
+
+            <!-- Pairings Display -->
+            <div id="pairingsArea" class="pairings-area">
+              <div class="empty-state">
+                <div class="empty-icon">🏆</div>
+                <p>添加选手并点击"开始锦标赛"生成配对</p>
+              </div>
+            </div>
+
+            <!-- Standings -->
+            <div id="standingsArea" class="standings-area" style="display:none;">
+              <h4 class="standings-title">积分排名</h4>
+              <table class="standings-table">
+                <thead>
+                  <tr>
+                    <th>排名</th>
+                    <th>选手</th>
+                    <th>胜</th>
+                    <th>平</th>
+                    <th>负</th>
+                    <th>积分</th>
+                    <th>布赫兹分</th>
+                  </tr>
+                </thead>
+                <tbody id="standingsBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          <span class="logo-text">CARD CLASH</span>
+          <p>亚马逊云科技 Card Clash 对战锦标赛</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://aws.amazon.com/training/digital/aws-card-clash/" target="_blank" rel="noopener">下载 Card Clash</a>
+          <a href="https://aws.amazon.com/" target="_blank" rel="noopener">亚马逊云科技</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 亚马逊云科技 Card Clash 对战锦标赛. 本页面为活动宣传用途。</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cognito SDK (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@6/dist/amazon-cognito-identity.min.js"></script>
+  <!-- CDK-generated runtime config -->
+  <script src="config.js" onerror="window.APP_CONFIG={}"></script>
+  <script src="events.js"></script>
+  <script src="auth.js"></script>
+  <script src="app.js"></script>
+  <script>
+    Auth.init();
+
+    // 渲染活动日程
+    (function renderEvents() {
+      const container = document.getElementById('eventTimeline');
+      if (!container || typeof EVENTS === 'undefined' || !EVENTS.length) return;
+
+      container.innerHTML = EVENTS.map(ev => {
+        const tz = ev.time && ev.time !== 'TBD'
+          ? ` <span class="event-tz">(${ev.timezone || '北京时间 UTC+8'})</span>`
+          : '';
+        const timeStr = ev.time ? `&nbsp;&nbsp;⏰ ${ev.time}${tz}` : '';
+        return `
+        <div class="timeline-item${ev.active ? ' active' : ''}">
+          <div class="timeline-content">
+            <h3>${ev.title}</h3>
+            <div class="event-meta-row">
+              <span class="event-detail">📅 ${ev.date}${timeStr}</span>
+              <span class="timeline-tag">${ev.type}</span>
+            </div>
+            ${ev.signupUrl
+              ? `<a href="${ev.signupUrl}" target="_blank" rel="noopener" class="btn btn-primary btn-sm event-signup-btn">立即报名 →</a>`
+              : '<span class="event-signup-closed">报名未开放</span>'}
+          </div>
+        </div>`;
+      }).join('');
+    })();
+  </script>
+</body>
+</html>

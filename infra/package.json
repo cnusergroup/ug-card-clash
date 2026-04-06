@@ -1,0 +1,17 @@
+{
+  "name": "cardclash-infra",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc",
+    "cdk": "cdk"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.239.0",
+    "constructs": "^10.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.33",
+    "aws-cdk": "^2.130.0",
+    "typescript": "^5.4.0"
+  }
+}

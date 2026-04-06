@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# CDK build outputs (contains account IDs, ARNs, and synthesized templates)
+infra/cdk.out/
+infra/dist/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Kiro internal
+.kiro/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment / secrets
+.env
+.env.*
+config.js
+
+# Logs
+*.log

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>签到 — AWS Card Clash</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="checkin.css">
+</head>
+<body>
+  <canvas id="particles"></canvas>
+
+  <main class="checkin-main">
+    <div class="container">
+
+      <!-- 活动名称显示区 -->
+      <div class="checkin-header">
+        <span class="logo-icon">⚡</span>
+        <h1 class="checkin-event-name" id="eventName">加载中...</h1>
+      </div>
+
+      <!-- 昵称输入表单 -->
+      <div class="checkin-form-area" id="checkinFormArea">
+        <form id="checkinForm" autocomplete="off">
+          <label for="nicknameInput" class="checkin-label">输入你的昵称</label>
+          <div class="checkin-input-row">
+            <input type="text" id="nicknameInput" placeholder="昵称（1-20 字符）" maxlength="20" required>
+            <button type="submit" class="btn btn-primary" id="checkinSubmitBtn">我要参赛</button>
+          </div>
+          <p class="checkin-error" id="checkinError" role="alert"></p>
+        </form>
+      </div>
+
+      <!-- 签到成功确认区 -->
+      <div class="checkin-success" id="checkinSuccess" style="display:none;">
+        <div class="success-icon">✅</div>
+        <p class="success-msg">签到成功！等待管理员开始比赛...</p>
+        <a href="live.html" class="btn btn-ghost btn-sm checkin-live-link">查看实时对战表 →</a>
+      </div>
+
+      <!-- 实时签到列表 -->
+      <div class="checkin-list-area" id="checkinListArea" style="display:none;">
+        <h2 class="checkin-list-title">已签到选手 (<span id="checkinCount">0</span>人)</h2>
+        <ul class="checkin-list" id="checkinList"></ul>
+      </div>
+
+      <!-- 签到已结束提示区 -->
+      <div class="checkin-closed" id="checkinClosed" style="display:none;">
+        <div class="closed-icon">⏰</div>
+        <p>签到已结束</p>
+      </div>
+
+      <!-- 签到链接无效提示区 -->
+      <div class="checkin-invalid" id="checkinInvalid" style="display:none;">
+        <div class="invalid-icon">⚠️</div>
+        <p>签到链接无效</p>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="config.js" onerror="window.APP_CONFIG={}"></script>
+  <script src="checkin.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>实时对战表 — AWS Card Clash</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="live.css">
+</head>
+<body>
+  <canvas id="particles"></canvas>
+
+  <nav class="nav scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">CARD CLASH</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html#about">关于</a>
+        <a href="index.html#rules">赛制</a>
+        <a href="index.html#schedule">日程</a>
+        <a href="index.html#tool">赛程工具</a>
+        <a href="records.html">成绩记录</a>
+        <a href="live.html" class="nav-active">实时对战</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="live-main">
+    <div class="container">
+      <div class="live-header">
+        <div class="live-badge">
+          <span class="live-dot" id="liveDot"></span>
+          <span id="liveStatus">连接中...</span>
+        </div>
+        <h1 class="live-title">实时对战表</h1>
+        <p class="live-subtitle">页面自动更新，无需刷新</p>
+        <div class="live-meta" id="liveMeta"></div>
+      </div>
+
+      <!-- Idle state -->
+      <div class="live-idle" id="liveIdle">
+        <div class="idle-icon">⏳</div>
+        <p>比赛尚未开始</p>
+        <p class="idle-sub">管理员开始配对后，对战表将自动显示在这里</p>
+      </div>
+
+      <!-- Active state -->
+      <div id="liveContent" style="display:none;">
+        <div class="live-grid">
+          <!-- Pairings -->
+          <div class="live-panel">
+            <div class="live-panel-header">
+              <span class="panel-tag">当前轮次</span>
+              <span class="panel-round" id="liveRoundLabel">—</span>
+            </div>
+            <div id="livePairings"></div>
+          </div>
+
+          <!-- Standings -->
+          <div class="live-panel">
+            <div class="live-panel-header">
+              <span class="panel-tag">积分排名</span>
+            </div>
+            <table class="live-standings-table">
+              <thead>
+                <tr>
+                  <th>排名</th><th>选手</th><th>胜</th><th>平</th><th>负</th><th>积分</th><th>布赫兹</th>
+                </tr>
+              </thead>
+              <tbody id="liveStandingsBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="config.js" onerror="window.APP_CONFIG={}"></script>
+  <script src="app.js"></script>
+  <script src="live.js"></script>
+</body>
+</html>

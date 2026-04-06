@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>活动成绩记录 — 亚马逊云科技 Card Clash</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="records.css">
+</head>
+<body>
+  <canvas id="particles"></canvas>
+
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">CARD CLASH</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html#about">关于</a>
+        <a href="index.html#rules">赛制</a>
+        <a href="index.html#schedule">日程</a>
+        <a href="index.html#tool">赛程工具</a>
+        <a href="records.html" class="nav-active">成绩记录</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="records-main">
+    <div class="container">
+      <div class="section-header" style="padding-top: 120px;">
+        <span class="section-tag">// RECORDS</span>
+        <h1 class="section-title">活动成绩记录</h1>
+        <p class="section-desc">每次 Card Clash 锦标赛的完整成绩存档，见证每一位选手的成长。</p>
+      </div>
+
+      <!-- Stats Bar -->
+      <div class="stats-bar" id="statsBar">
+        <div class="stat-item">
+          <span class="stat-val" id="totalEvents">0</span>
+          <span class="stat-lbl">历届活动</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-val" id="totalPlayers">0</span>
+          <span class="stat-lbl">累计参赛人次</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-val" id="totalMatches">0</span>
+          <span class="stat-lbl">累计对局数</span>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="records-controls">
+        <input type="text" id="searchInput" placeholder="搜索选手姓名或活动名称..." class="search-input">
+        <button class="btn btn-danger btn-sm admin-only" id="clearAllRecordsBtn">清空所有记录</button>
+      </div>
+
+      <!-- Records List -->
+      <div id="recordsList"></div>
+
+      <!-- Empty State -->
+      <div class="empty-records" id="emptyState" style="display:none;">
+        <div class="empty-icon">📋</div>
+        <p>暂无成绩记录</p>
+        <p class="empty-sub">在<a href="index.html#tool">赛程工具</a>完成比赛后，点击"保存成绩"即可记录到此处。</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          <span class="logo-text">CARD CLASH</span>
+          <p>亚马逊云科技 Card Clash 对战锦标赛</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://aws.amazon.com/training/digital/aws-card-clash/" target="_blank" rel="noopener">下载 Card Clash</a>
+          <a href="https://aws.amazon.com/" target="_blank" rel="noopener">亚马逊云科技</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 亚马逊云科技 Card Clash 对战锦标赛. 本页面为活动宣传用途。</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cognito SDK (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@6/dist/amazon-cognito-identity.min.js"></script>
+  <!-- CDK-generated runtime config -->
+  <script src="config.js" onerror="window.APP_CONFIG={}"></script>
+  <script src="auth.js"></script>
+  <script src="app.js"></script>
+  <script src="records.js"></script>
+  <script>Auth.init();</script>
+</body>
+</html>
