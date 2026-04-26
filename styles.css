@@ -660,6 +660,28 @@ a:hover { color: #ffb84d; }
   font-style: italic;
 }
 
+.event-finished-tag {
+  display: inline-block;
+  font-size: 13px;
+  color: var(--success);
+  font-weight: 600;
+}
+
+.timeline-item.finished::after {
+  border-color: var(--text-muted);
+  background: var(--text-muted);
+  box-shadow: none;
+}
+
+.timeline-item.finished .timeline-content {
+  opacity: 0.65;
+}
+
+.timeline-item.finished .timeline-content h3 {
+  text-decoration: line-through;
+  text-decoration-color: var(--text-muted);
+}
+
 .event-tz {
   font-size: 11px;
   color: var(--text-muted);

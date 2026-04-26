@@ -18,15 +18,16 @@ const EVENTS = [
     date: "2026年2月26日",
     time: "20:00 - 21:30",
     type: "线上",
-    signupUrl: "https://ycncgf36nxp0.feishu.cn/share/base/form/shrcnBJmIfQC9YotxbJaaJP58xd",
-    active: true
+    signupUrl: "",
+    active: false,
+    finished: true
   },
   {
     title: "第二期 Card Clash Game Night",
-    date: "TBD",
-    time: "TBD",
-    type: "TBD",
-    signupUrl: "",
-    active: false
+    date: "2026年4月28日",
+    time: "20:00 - 21:30",
+    type: "线上",
+    signupUrl: "https://events.teams.microsoft.com/event/eaf149cc-0b21-43a6-96de-f7d6fb6fb80e@202230d0-e5b2-455b-9a54-44e6cbac435a",
+    active: true
   }
 ];

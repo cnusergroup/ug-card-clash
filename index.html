@@ -341,17 +341,23 @@
           ? ` <span class="event-tz">(${ev.timezone || '北京时间 UTC+8'})</span>`
           : '';
         const timeStr = ev.time ? `&nbsp;&nbsp;⏰ ${ev.time}${tz}` : '';
+        let actionHtml;
+        if (ev.finished) {
+          actionHtml = '<span class="event-finished-tag">✅ 已好评结束</span>';
+        } else if (ev.signupUrl) {
+          actionHtml = `<a href="${ev.signupUrl}" target="_blank" rel="noopener" class="btn btn-primary btn-sm event-signup-btn">立即报名 →</a>`;
+        } else {
+          actionHtml = '<span class="event-signup-closed">报名未开放</span>';
+        }
         return `
-        <div class="timeline-item${ev.active ? ' active' : ''}">
+        <div class="timeline-item${ev.active ? ' active' : ''}${ev.finished ? ' finished' : ''}">
           <div class="timeline-content">
             <h3>${ev.title}</h3>
             <div class="event-meta-row">
               <span class="event-detail">📅 ${ev.date}${timeStr}</span>
               <span class="timeline-tag">${ev.type}</span>
             </div>
-            ${ev.signupUrl
-              ? `<a href="${ev.signupUrl}" target="_blank" rel="noopener" class="btn btn-primary btn-sm event-signup-btn">立即报名 →</a>`
-              : '<span class="event-signup-closed">报名未开放</span>'}
+            ${actionHtml}
           </div>
         </div>`;
       }).join('');
