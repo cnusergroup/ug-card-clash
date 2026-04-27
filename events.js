@@ -29,5 +29,13 @@ const EVENTS = [
     type: "线上",
     signupUrl: "https://events.teams.microsoft.com/event/eaf149cc-0b21-43a6-96de-f7d6fb6fb80e@202230d0-e5b2-455b-9a54-44e6cbac435a",
     active: true
+  },
+  {
+    title: "第三期 Card Clash Game Night",
+    date: "TBD",
+    time: "",
+    type: "TBD",
+    signupUrl: "",
+    active: false
   }
 ];
